@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :update, :delete, :posts_index ]
-  before_action :authenticate_request, only: [ :update, :delete, :show, :create ]
+  before_action :authenticate_request, only: [ :update, :delete, :create ]
   def index
     users = User.all
     render json: UserBlueprint.render(users, view: :normal), status: 200
   end
 
   def show
-    render json: @user, status: 200
+    render json: { payload: @user, status: 200 }
   end
 
   def create
