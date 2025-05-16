@@ -1,14 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [ :show, :update, :delete ]
-
-  def index
-    posts = Post.all
-    render json: posts, status: 200
-  end
-
-  def show
-    render json: @post, status: 200
-  end
+  before_action :set_post, only: [ :update, :delete ]
 
   def create
     post = Post.new(post_params)
@@ -41,6 +32,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content)
+    params.permit(:content, :user_id)
   end
 end
