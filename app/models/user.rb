@@ -29,6 +29,7 @@ class User < ApplicationRecord
 
   def hello_user
     puts "Hello, #{username}"
+    puts "Hello, #{email}"
   end
 
   def validate_username
