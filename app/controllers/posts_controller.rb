@@ -11,6 +11,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def index
+    posts = Post.all
+    render json: posts, status: :ok
+  end
+
   def show
     render json: @post, status: :ok
   end

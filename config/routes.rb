@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # POSTS
   # localhost:3000/posts
+  get "/posts", to: "posts#index" # get all posts
   post "/posts", to: "posts#create" # create a new post
   # localhost:3000/posts/id
   get "/posts/:id", to: "posts#show" # get a single post
