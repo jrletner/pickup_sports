@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # localhost:3000/posts
   post "/posts", to: "posts#create" # create a new post
   # localhost:3000/posts/id
+  get "/posts/:id", to: "posts#show" # get a single post
   put "/posts/:id", to: "posts#update" # update a post
   delete "posts/:id", to: "posts#delete" # delete a post
 end

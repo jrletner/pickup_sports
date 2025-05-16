@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [ :update, :delete ]
+  before_action :set_post, only: [ :update, :delete, :show ]
+  before_action :authenticate_request
 
   def create
     post = Post.new(post_params)
@@ -8,6 +9,10 @@ class PostsController < ApplicationController
     else
       render json: post.errors, status: :unprocessable_entity
     end
+  end
+
+  def show
+    render json: @post, status: :ok
   end
 
   def update
