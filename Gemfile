@@ -24,6 +24,7 @@ gem "solid_cable"
 gem "bootsnap", require: false
 gem "bcrypt"
 gem "jwt"
+gem "blueprinter"
 
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "kamal", require: false
