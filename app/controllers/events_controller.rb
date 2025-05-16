@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
+      d
       render json: @event, status: :ok
     else
       render json: @event.errors, status: :unprocessable_entity
