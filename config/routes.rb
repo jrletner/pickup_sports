@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get "profiles/show"
   get "sessions/create"
   get "up" => "rails/health#show", as: :rails_health_check
 
   scope "/" do
     post "login", to: "sessions#create"
+  end
+
+  get "/profiles", to: "profiles#index"
+  scope :profiles do
+    get ":username", to: "profiles#show"
   end
 
   # USERS
