@@ -31,4 +31,12 @@ Rails.application.routes.draw do
   get "/posts/:id", to: "posts#show" # get a single post
   put "/posts/:id", to: "posts#update" # update a post
   delete "posts/:id", to: "posts#delete" # delete a post
+  # EVENTS
+  # localhost:3000/events
+  get "/events", to: "events#index" # get all posts
+  post "/events", to: "events#create" # create a new post
+  # localhost:3000/posts/id
+  get "/events/:id", to: "events#show" # get a single post
+  put "/events/:id", to: "events#update" # update a post
+  delete "events/:id", to: "events#delete" # delete a post
 end

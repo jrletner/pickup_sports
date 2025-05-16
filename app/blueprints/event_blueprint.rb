@@ -4,6 +4,6 @@ class EventBlueprint < Blueprinter::Base
   identifier :id
 
   view :profile do
-    fields :content, :start_date_time, :end_date_time, :guests, :title
+    fields :content, :start_date_time, :end_date_time, :guests
   end
 end
