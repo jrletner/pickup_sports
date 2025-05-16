@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :update, :delete, :posts_index ]
-  before_action :authenticate_request, only: [ :index, :show, :update, :delete ]
+
   def index
     users = User.all
     render json: users, status: 200

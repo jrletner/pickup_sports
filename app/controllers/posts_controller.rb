@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [ :update, :delete, :show ]
-  before_action :authenticate_request
 
   def create
     post = Post.new(post_params)
