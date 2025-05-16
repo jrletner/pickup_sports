@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_request
 
   def create
-    event = Event.new(event_params)
+    event = @current_user.created_events.new(event_params)
     if event.save
       render json: event, status: :created
     else
