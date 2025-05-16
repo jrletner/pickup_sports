@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [ :update, :delete, :show ]
+  before_action :authenticate_request
 
   def create
     event = Event.new(event_params)
