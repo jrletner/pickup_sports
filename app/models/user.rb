@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   # set up required columns
   validates :username, :email, :first_name, :last_name, presence: true
   # set up unique columns
@@ -28,8 +30,7 @@ class User < ApplicationRecord
   private
 
   def hello_user
-    puts "Hello, #{username}"
-    puts "Hello, #{email}"
+    puts "Hello, #{username} - #{email}"
   end
 
   def validate_username
