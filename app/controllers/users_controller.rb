@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :update, :delete, :posts_index ]
-  before_action :authenticate_request, only: [ :update, :delete, :create ]
+  before_action :authenticate_request, only: [ :update, :delete, :show ]
   def index
     users = User.all
     render json: UserBlueprint.render(users, view: :normal), status: 200
